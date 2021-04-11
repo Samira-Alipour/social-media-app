@@ -1,0 +1,156 @@
+body {
+  background: #290a1f;
+  color: #cbd5db;
+  margin-top: 1rem;
+}
+
+
+.container {
+  border-style: none;
+  background: #290a1f;
+  padding: 10px 20px;
+  /*border-radius: 5px;*/
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+
+.navbar {
+  width:auto;
+  background-image: url('/static/images/2.jpg');
+  position: relative;
+  background-repeat: no-repeat;// no-repeat
+  background-position: center;
+  background-size: cover;
+  
+}
+
+.post-group {
+  padding:20px;
+  margin-right: 50px
+  margin-top:100px;
+  margin-bottom: 20px;
+  background: #290a1f;
+  color: #f2f2f2;
+  font-size: 1rem;
+  width: 80%;
+  border: none;
+}
+.post-group h1 {
+  font-size: 1.1rem;
+  border-top: solid
+}
+
+.post-group a {
+  color:#ff66ff;
+}
+
+.post-group a::hover {
+  color:#f2f2f2;
+}
+
+.post-group-img {
+  height: 50px;
+  width: 50px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+
+
+.post-form-col {
+  border-left: solid;
+  padding-left: 20px;
+}
+
+
+.search-buttons {
+  padding-left:100px;
+}
+
+.account-img {
+  height: 200px;
+  width: 200px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+/*body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}*/
