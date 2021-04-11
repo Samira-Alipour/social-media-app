@@ -1,0 +1,111 @@
+{% extends 'layout.html' %}
+{% block content %}
+{%if current_user.is_authenticated%}
+
+
+<div class='row'>
+
+	<div class="col-md-8">
+		{% for post in posts.items %}
+		<article>
+		<div class='container post-group'> 
+
+			<a href=""> <img class='post-group-img' src="/static/images/1.png"></a>
+			<small class='text-muted'>	{{post.date_posted.strftime('%Y-%m-%d')}} </small>
+			<h1>
+			<a href=""> {{post.title}} </a>
+			</h1>		
+			<p>{{post.content}}</p>
+
+			{%if post.author.username==current_user.username%}
+				<a href="{{url_for('posts.update_post', post_id=post.id)}}"> Edit </a>
+				<a href="{{url_for('posts.delete_post', post_id=post.id)}}"> Delete </a>
+			{%endif%}
+
+		</div>
+
+		</article>
+		{%endfor%}
+
+	</div>	
+
+
+
+	<div class="col-md-4 post-form-col">
+		<form method="POST" action="">
+			{{form.hidden_tag()}}
+			<fieldset class='form-group'>
+				<legend class="border-bottom mb-2"> Post your comment</legend>
+				<div class='form-group'>
+					{{ form.title.label(class="form-control-label")}}
+					{%if form.title.errors %}
+						{{ form.title(class="form-control form-control-label-lg is-invalid")}}
+						<div class='invalid-feedback'>
+							{% for error in form.title.errors%}
+								<span>{{error}}</span>
+							{%endfor%}
+						</div>
+					{%else%}
+						{{ form.title(class="form-control form-control-label-lg")}}
+					{%endif%}
+				</div>
+				<div class='form-group'>
+					{{ form.content.label(class="form-control-label")}}
+					{%if form.content.errors %}
+						{{ form.content(class="form-control form-control-label-lg is-invalid")}}
+						<div class='invalid-feedback'>
+							{% for error in form.content.errors%}
+								<span>{{error}}</span>
+							{%endfor%}
+						</div>
+					{%else%}
+						{{ form.content(class="form-control form-control-label-lg")}}
+					{%endif%}				
+					
+				</div>
+			</fieldset>
+
+			<div class='form-group'>
+				{{form.submit(class='btn btn-outline-info')}}
+			</div>
+		</form>
+		</div>
+	</div>	
+
+{%else%}
+<div class='row'>
+
+	<div class="col-md-8 ">
+		{% for post in posts.items %}
+		<article>
+		<div class='container post-group'> 
+
+			<a href=""> <img class='post-group-img' src="/static/images/1.png"></a>
+			<small class='text-muted'>	{{post.date_posted.strftime('%Y-%m-%d')}} </small>
+			<h1>
+			<a href=""> {{post.title}} </a>
+			</h1>		
+			<p>{{post.content}}</p>
+		</div>
+		</article>
+		{%endfor%}
+
+	</div>	
+
+</div>	
+
+{%endif%}
+<div class='row'>
+	<div class="col-md-8 search-buttons">
+		{% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+			{%if posts.page%}
+				{%if posts.page==page_num %}
+					<a class='btn btn-info mb-4'href="{{url_for('main.home', page=page_num)}}"> {{page_num}} </a>
+				{%else%}
+					<a class='btn btn-outline-info mb-4'href="{{url_for('main.home', page=page_num)}}"> {{page_num}} </a>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+{%endblock %}
